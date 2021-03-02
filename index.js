@@ -25,7 +25,6 @@ http.createServer((req, res) => {
       html = html.replace(/<!-- Title -->/g, " proveedores");
 
       const tableBody = data.map(d => (`<tr><td>${d.idproveedor}</td><td>${d.nombrecompania}</td><td>${d.nombrecontacto}</td></tr>`)).join("");
-      console.log(tableBody)
 
       res.writeHeader(200, {"Content-Type": "text/html"});
       res.write(html.replace("<!-- Table Data -->", tableBody));
